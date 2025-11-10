@@ -1,2 +1,2 @@
 # VibeFit
-Site one-page
+"Treine com atitude. Viva na vibe certa."
