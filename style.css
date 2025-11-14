@@ -1,0 +1,103 @@
+/* ==================== VARIÁVEIS ==================== */
+:root {
+    --preto: #0d0d0d;
+    --branco: #ffffff;
+    --laranja: #ff6600;
+    --cinza: #cccccc;
+    --fonte: "Montserrat", sans-serif;
+}
+
+/* ==================== GERAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte);
+    background-color: var(--preto);
+    color: var(--branco);
+    line-height: 1.5;
+}
+
+/* ==================== CABEÇALHO ==================== */
+.topo {
+    background-color: var(--preto);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navegacao {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--laranja);
+    text-decoration: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--branco);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--laranja);
+}
+
+/* ==================== BANNER (PARALLAX) ==================== */
+.banner {
+    height: 100vh;
+    background: url("background.jpg") center center / cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.banner-texto {
+    max-width: 700px;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--cinza);
+}
+
+.botao {
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 0.9rem 2rem;
+    border-rad;
+}
