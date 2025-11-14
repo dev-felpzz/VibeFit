@@ -102,6 +102,7 @@ header {
 
 #check {
     display: none;
+    color: var(--Branco);
 }
 
 label {
@@ -114,7 +115,7 @@ label {
 
 nav ul {
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--Branco);
     position: fixed;
     top: 55px;
     right: -55%;
@@ -162,7 +163,7 @@ main h1 {
     color: var(--Laranja);
     font-family: 'PT Serif';
     font-size: 46px;
-    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(255, 0, 0, 0.849), 0px 15px 15px rgb(255, 0, 0), 0px 20px 20px rgb(255, 0, 0);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px var(--Laranja) 0px 15px 15px var(--Laranja), 0px 20px 20px var(--Laranja);
     text-shadow:
         -1px -1px 0px #fff,
         /* canto superior esquerdo */
@@ -178,14 +179,14 @@ main h1 {
 main h2 {
     font-size: .90rem;
     color: var(--Branco);
-    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.849), 0px 15px 15px rgb(255, 0, 0), 0px 20px 20px rgb(255, 0, 0);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.849), 0px 15px 15px var(--Laranja), 0px 20px 20px var(--Laranja);
     margin-bottom: 30px;
 
 }
 
 /* Destaque */
 #destaque {
-    padding: 10px 20px;
+    padding: 60px 30px;
     background: url(img/paralaxx.png);
     background-size: cover;
     background-position: center;
@@ -220,7 +221,7 @@ main h2 {
 
 #hero-text h2 {
     margin-bottom: 15px;
-    margin-top: -20px;
+    margin-top: -01px;
 }
 
 .topics {
@@ -239,6 +240,7 @@ main h2 {
     margin-bottom: 30px;
     margin-top: -50px;
 }
+
 #hero-text h2 {
     color: var(--Laranja);
     text-align: center;
@@ -258,7 +260,7 @@ main h2 {
 }
 
 #texto h2 {
-    color:var(--Laranja);
+    color: var(--Laranja);
     padding: 10px 5px 10px;
     text-align: center;
     text-shadow:
@@ -293,20 +295,26 @@ main h2 {
     display: flex;
     flex-direction: column;
 
+
+}
+
+#qrcode {
+    display: none;
 }
 
 #titulo h2 {
     color: var(--Laranja);
     text-align: center;
     font-size: 20px;
-    padding: 15px 5px;
+    padding: 10px 1px;
 }
 
 #titulo p {
-    color: var(--Preto);
-    font-size: 19px;
+    color: var(--Branco);
+    font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
+    padding-top: 80px;
 }
 
 #titulo #p {
@@ -403,7 +411,7 @@ main h2 {
 #contato .hora {
     display: none;
 }
-    
+
 footer {
     display: flex;
     background-color: rgb(49, 49, 49);
@@ -413,6 +421,7 @@ footer {
 
 footer .container {
     display: flex;
+    color: var(--Branco);
     flex-direction: column-reverse;
     align-items: center;
     margin-bottom: -55px;
@@ -458,7 +467,7 @@ footer #rodape {
     }
 
     main h2 {
-        font-size: 1.30rem;
+        font-size: 1.10rem;
     }
 
     /* Destaque */
@@ -534,13 +543,15 @@ footer #rodape {
     }
 
     #destaque h2 {
-        font-size: 40px;
-    }
-    #destaque p {
-        font-size: 20px;
-    }
-    #texto h2 {
         font-size: 50px;
+    }
+
+    #destaque p {
+        font-size: 30px;
+    }
+
+    #texto h2 {
+        font-size: 60px;
     }
 
     #texto p {
@@ -601,9 +612,11 @@ footer #rodape {
     #imgemail {
         margin-top: 20px;
     }
+
     .icones img {
         height: 60px;
     }
+
     #mensagem {
         font-size: 23px;
     }
@@ -628,8 +641,8 @@ footer #rodape {
         position: static;
         width: 100%;
         height: auto;
-        background-color: transparent;
-        margin-top: -2px;
+        background-color: var(--Branco);
+        margin-top: 17px;
     }
 
     nav ul li {
@@ -789,18 +802,21 @@ footer #rodape {
     }
 
     #titulo .btn2 {
-        margin: 40px 0 0 0;
+        margin: 40px;
         display: inline-block;
-        float: left;
+        float: center;
     }
 
-    #qrcode img {
-        width: 380px;
-        height: 380px;
-        padding: 20px;
-        margin-left: 30px;
-        padding-top: 50px;
-        display: block;
+    #qrcode {
+        display: flex;
+        height: 400px;
+        background-color: var(--Cinza);
+    }
+
+    #code img {
+        width: 350px;
+        height: 350px;
+        margin-top: 20px;
     }
 
     #cardapio .container {
@@ -820,96 +836,98 @@ footer #rodape {
         background-attachment: fixed;
         height: 50vh;
     }
-   
-  #contato {
-  background-color: #444;
-  color: #fff;
-  padding: 60px 0;
-  font-family: "Open Sans", sans-serif;
-  
-}
 
-#contato .contato {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-left: 140px;
-  
-}
+    #contato {
+        background-color: #444;
+        color: #fff;
+        padding: 60px 0;
+        font-family: "Open Sans", sans-serif;
 
-#contato iframe {
-  display: flex;
-}
+    }
 
-#contato .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 80px;
-}
+    #contato .contato {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 140px;
 
-#contato .item {
-  display: flex;
-  align-items: center;
-  
-}
+    }
 
-#contato .item img {
-  width: 40px;
-  height: 50px;
-  margin: 10px;
-}
+    #contato iframe {
+        display: flex;
+    }
 
-#contato .item p {
-  font-size: 23px;
-  padding-bottom: 10px;
-}
+    #contato .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 80px;
+    }
 
-#contato .hora {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    padding-left: 60px;
-    margin-bottom: 26px;
-    
-}
-#contato .hora h2 {
-    font-size: 32px;
-    padding-bottom: 12px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-#contato .hora p {
-    font-size: 23px;
-}
+    #contato .item {
+        display: flex;
+        align-items: center;
+
+    }
+
+    #contato .item img {
+        width: 40px;
+        height: 50px;
+        margin: 10px;
+    }
+
+    #contato .item p {
+        font-size: 23px;
+        padding-bottom: 10px;
+    }
+
+    #contato .hora {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        padding-left: 60px;
+        margin-bottom: 26px;
+
+    }
+
+    #contato .hora h2 {
+        font-size: 32px;
+        padding-bottom: 12px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #contato .hora p {
+        font-size: 23px;
+    }
 
 
-footer {
-    display:block;
-    padding-bottom: 0px;
-}
+    footer {
+        display: block;
+        padding-bottom: 0px;
+    }
 
-footer .container {
-    flex-direction: row;
-    padding-top: 0px;
-}
+    footer .container {
+        flex-direction: row;
+        padding-top: 0px;
+    }
 
-footer #rodape {
-    padding-top: 60px;
-    margin-left: 100px;
-    font-size: 22px;
-}
+    footer #rodape {
+        padding-top: 60px;
+        margin-left: 100px;
+        font-size: 22px;
+    }
 
-.icones img {
-    height: 48px;
-    width: 60px;
-    padding-left: 10px;
-    margin-bottom: 30px;
-}
+    .icones img {
+        height: 48px;
+        width: 60px;
+        padding-left: 10px;
+        margin-bottom: 30px;
+    }
 
-.container #rodape {
-    padding-bottom: 60px;
-}
+    .container #rodape {
+        padding-bottom: 60px;
+    }
 }
 
 /* Notebook/Pc <<<<<<<<<<<<<<<<<< */
