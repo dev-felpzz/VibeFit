@@ -372,12 +372,13 @@ main h2 {
     font-size: 25px;
 }
 
-#contato .container {
+#contato .contato {
     display: flex;
-    color: var(--Branco);
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-bottom: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  /* deixa vertical alinhado */
+    padding-left: 0;      /* REMOVE de vez */
+    gap: 60px;            /* espaço entre mapa e texto */
 }
 
 #contato {
@@ -509,9 +510,10 @@ footer #rodape {
     }
 
     #contato .container {
-        padding: 20px 600px 0px 0px;
-        padding-bottom: 37px;
-    }
+    padding: 20px 0 37px 0;
+    justify-content: center;
+    align-items: center;
+}
 
     #email {
         padding-top: 8px;
@@ -850,12 +852,13 @@ footer #rodape {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding-left: 140px;
+        padding-left: 170px;
 
     }
 
     #contato iframe {
         display: flex;
+        col
     }
 
     #contato .info {
