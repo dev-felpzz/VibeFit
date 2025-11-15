@@ -1,103 +1,953 @@
-/* ==================== VARIÁVEIS ==================== */
+/*layout >>>>>>>>>>>>>>>>>>>>>>> */
+
+/* Váriaveis */
 :root {
-    --preto: #0d0d0d;
-    --branco: #ffffff;
-    --laranja: #ff6600;
-    --cinza: #cccccc;
-    --fonte: "Montserrat", sans-serif;
+    --Preto: #000000;
+    --Branco: #ffffff;
+    --Cinza: #5a5a5a;
+    --Laranja: #FF5C00;
 }
 
-/* ==================== GERAL ==================== */
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: "PT Serif", serif;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--Laranja);
+    padding: 5px 30px;
+    color: var(--Branco);
+    border-radius: 50px;
+    border: 2px solid var(--Branco);
+
+}
+
+/*Cartâo*/
+.card {
+    width: 341px;
+    height: 520px;
+    background-color: var(--Cinza);
+    margin-bottom: 25px;
+    border-radius: 2px solid var(--Laranja);
+    text-align: center;
+    border-radius: 25px;
+
+}
+
+
+.card img {
+    border-radius: 30px;
+    align-items: center;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    color: var(--Laranja);
+    margin: 15px 0px;
+}
+
+.card p {
+    color: var(--Branco);
+    padding: 0px 15px 30px 15px;
+}
+
+.card h3 {
+    margin-bottom: 30px;
+    color: var(--Branco);
+    font-size: 22px;
+}
+
+/*topo do site */
+#topo {
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+}
+
+/* Scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: var(--fonte);
-    background-color: var(--preto);
-    color: var(--branco);
-    line-height: 1.5;
+/* Fim - Layout <<<<<<<<<<<<<<<<< */
+
+/* Smartphone Portrait >>>>>>>>>>>>>>>>> */
+
+/* Cabeçalho */
+header {
+    background-color: var(--Preto);
+    height: 55px;
 }
 
-/* ==================== CABEÇALHO ==================== */
-.topo {
-    background-color: var(--preto);
-    width: 100%;
+#logo img {
+    width: 55px;
+    height: 55px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+#check {
+    display: none;
+    color: var(--Preto);
+}
+
+label {
+    color: rgba(250, 250, 250, 0.85);
+    font-size: 2rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    right: 15px;
+    top: 3px;
 }
 
-.navegacao {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--laranja);
-    text-decoration: none;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.menu a {
-    text-decoration: none;
-    color: var(--branco);
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.menu a:hover {
-    color: var(--laranja);
-}
-
-/* ==================== BANNER (PARALLAX) ==================== */
-.banner {
+nav ul {
     height: 100vh;
-    background: url("background.jpg") center center / cover no-repeat fixed;
-    display: flex;
+    background-color: var(--Cinza);
+    position: fixed;
+    top: 55px;
+    right: -55%;
+    width: 55%;
+    transition: all 0.5s;
+}
+
+/* açâo para a caixa checkbox */
+/* quando selecionado mudar propriedades ul */
+
+#check:checked~ul {
+    right: 0px;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 20px;
+    text-align: right;
+    border-bottom: 1px solid var(--Preto);
+    text-align: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--Branco)
+}
+
+/*Principal*/
+main {
+    height: 50vh;
+    background: url(./img/background.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+main .container {
+    height: 100%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+main h1 {
+    color: var(--Laranja);
+    font-family: 'PT Serif';
+    font-size: 46px;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px var(--Laranja) 0px 15px 15px var(--Laranja), 0px 20px 20px var(--Laranja);
+    text-shadow:
+        -1px -1px 0px #000000,
+        /* canto superior esquerdo */
+        1px -1px 0px #000000,
+        /* canto superior direito */
+        -1px 1px 0px #000000,
+        /* canto inferior esquerdo */
+        1px 1px 0px #000000;
+    /* canto inferior direito */
+
+}
+
+main h2 {
+    font-size: .90rem;
+    color: var(--Branco);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.849), 0px 15px 15px var(--Laranja), 0px 20px 20px var(--Laranja);
+    margin-bottom: 30px;
+
+}
+
+/* Destaque */
+#destaque {
+    padding: 60px 30px;
+    background: url(img/paralaxx.png);
+    background-size: cover;
+    background-position: center;
+
+}
+
+#destaque h2 {
+    text-shadow:
+        -1px -1px 0px #000000,
+        /* canto superior esquerdo */
+        1px -1px 0px #000000,
+        /* canto superior direito */
+        -1px 1px 0px #000000,
+        /* canto inferior esquerdo */
+        1px 1px 0px #000000;
+    /* canto inferior direito */
+    font-size: 30px;
+}
+
+#destaque .container {
+    flex-direction: column;
+}
+
+#hero {
     text-align: center;
-    padding: 0 1rem;
 }
 
-.banner-texto {
-    max-width: 700px;
+#hero img {
+    width: 300px;
+    height: 450px;
 }
 
-.banner h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+#hero-text h2 {
+    margin-bottom: 15px;
+    margin-top: -01px;
 }
 
-.banner p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: var(--cinza);
+.topics {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
 }
 
-.botao {
-    background-color: var(--laranja);
-    color: var(--branco);
-    padding: 0.9rem 2rem;
-    border-rad;
+.topics p {
+    margin-left: 15px;
+    color: var(--Laranja);
+    font-size: 16px;
 }
+
+#destaque .container {
+    margin-bottom: 30px;
+    margin-top: -50px;
+}
+
+#hero-text h2 {
+    color: var(--Laranja);
+    text-align: center;
+}
+
+#hero-text p {
+    font-size: 16px;
+    color: var(--Preto);
+}
+
+
+#sobre .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#texto h2 {
+    color: var(--Laranja);
+    padding: 10px 5px 10px;
+    text-align: center;
+    text-shadow:
+        -2px -2px 0px #000000,
+        /* canto superior esquerdo */
+        2px -2px 0px #000000,
+        /* canto superior direito */
+        -2px 2px 0px #000000,
+        /* canto inferior esquerdo */
+        2px 2px 0px #000000;
+    /* canto inferior direito */
+}
+
+#texto p {
+    padding: 10px;
+    font-size: 20px;
+    color: var(--Preto);
+}
+
+#sobre h2 {
+    font-size: 30px;
+}
+
+#sobre iframe {
+    width: 370px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+
+}
+
+#cardapio .container {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#qrcode {
+    display: none;
+}
+
+#titulo h2 {
+    color: var(--Laranja);
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 1px;
+}
+
+#titulo p {
+    color: var(--Branco);
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    padding-top: 80px;
+}
+
+#titulo #p {
+    text-align: center;
+
+}
+
+#titulo .btn2 {
+    text-decoration: none;
+    font-size: 0.80rem;
+    font-weight: 800;
+    background-color: var(--Laranja);
+    padding: 9px 30px;
+    color: var(--Branco);
+    border-radius: 30px;
+    border: 2px solid var(--Branco);
+    align-items: center;
+    display: inline-block;
+    margin: 30px auto 0 auto;
+    width: auto;
+    max-width: fit-content;
+
+}
+
+#cardapio img {
+    display: none;
+}
+
+
+#servicos {
+    padding: 10px 20px;
+    background: url(img/paralaxx.png);
+    background-size: cover;
+    background-position: left;
+}
+
+
+#servicos .container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    justify-content: space-around;
+}
+
+#servicos .btn {
+    font-size: 25px;
+    align-items: center;
+}
+
+.card p {
+    font-size: 18px;
+}
+
+.card h2 {
+    font-size: 25px;
+}
+
+#contato .container {
+    display: flex;
+    color: var(--Branco);
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+#contato {
+    background-color: #444;
+}
+
+
+
+#contato iframe {
+    display: none;
+}
+
+#contato p {
+    font-size: 18px;
+    font-family: "open sans";
+}
+
+.contato #email {
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+#imgemail {
+    padding-top: 10px;
+}
+
+#mapa {
+    padding-top: 10px;
+}
+
+#contato .hora {
+    display: none;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(49, 49, 49);
+    padding-bottom: 85px;
+    flex-direction: column;
+}
+
+footer .container {
+    display: flex;
+    color: var(--Branco);
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: -55px;
+}
+
+footer .icones {
+    display: flex;
+    padding-top: 20px;
+    gap: 10px;
+
+}
+
+footer #rodape {
+    padding-top: 20px;
+    color: var(--Branco);
+}
+
+/* Fim - Smartphone Portrait <<<<<<<<<<<<<<<< */
+
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 576px) {
+
+    /* Layout */
+    .container {
+        max-width: 540px;
+    }
+
+    /*Cabeçalho*/
+    nav ul {
+        width: 40%;
+        right: -40%;
+    }
+
+    /*Principal*/
+    main {
+        height: 75vh;
+
+    }
+
+    main h1 {
+        font-size: 2.75rem;
+        color: var(--Laranja)
+    }
+
+    main h2 {
+        font-size: 1.10rem;
+    }
+
+    /* Destaque */
+    #destaque {
+        padding: 50px 0px;
+    }
+
+    #destaque .container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #hero {
+        text-align: left;
+    }
+
+    #hero img {
+        width: 200px;
+        height: 300px;
+        margin: 0px 50px 0px 0px;
+    }
+
+    .topics {
+        display: none;
+    }
+
+    #sobre iframe {
+        width: 560px;
+    }
+
+    #cardapio img {
+        display: none;
+    }
+
+    /*LANCHES*/
+    #servicos {
+        background-attachment: fixed;
+        padding: 50px 0px;
+    }
+
+    #contato .container {
+        padding: 20px 600px 0px 0px;
+        padding-bottom: 37px;
+    }
+
+    #email {
+        padding-top: 8px;
+    }
+}
+
+/* Fim - Smartphone Landscape <<<<<<<<<<<<<<<<<< */
+
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 768px) {
+
+    /* Layout */
+    .container {
+        max-width: 720px;
+    }
+
+    /* Principal*/
+    main h1 {
+        font-size: 4.0rem;
+    }
+
+    main h2 {
+        font-size: 1.60rem
+    }
+
+    .btn {
+        padding: 15px 35px;
+        font-size: 2rem;
+    }
+
+    #destaque h2 {
+        font-size: 50px;
+    }
+
+    #destaque p {
+        font-size: 30px;
+    }
+
+    #texto h2 {
+        font-size: 60px;
+    }
+
+    #texto p {
+        font-size: 35px;
+    }
+
+    #sobre iframe {
+        width: 700px;
+    }
+
+    #titulo h2 {
+        font-size: 30px;
+    }
+
+    #cardapio p {
+        font-size: 30px;
+        text-align: left;
+    }
+
+
+    #titulo .btn2 {
+        display: inline-block;
+        margin: 40px auto 0 auto;
+        padding: 15px 20px;
+        width: auto;
+        max-width: fit-content;
+        font-size: 1.5rem;
+
+    }
+
+    #cardapio img {
+        display: none;
+    }
+
+    #sobre iframe {
+        height: 400px;
+        margin-bottom: 30px;
+    }
+
+    #contato p {
+        font-size: 35px;
+    }
+
+    #contato img {
+        width: 60px;
+        height: 60px;
+    }
+
+    #whatsapp {
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    #mapa {
+        margin-top: 13px;
+    }
+
+    #imgemail {
+        margin-top: 20px;
+    }
+
+    .icones img {
+        height: 60px;
+    }
+
+    #mensagem {
+        font-size: 23px;
+    }
+}
+
+/* Tablet Portrait <<<<<<<<<<<<<<<<<< */
+
+/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 992px) {
+
+    /* Layout */
+    .container {
+        max-width: 960px;
+        justify-content: space-between;
+    }
+
+    label {
+        display: none;
+    }
+
+    nav ul {
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: var(--Preto);
+        margin-top: 17px;
+    }
+
+    nav ul li {
+        border: 0;
+        float: left;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li a:hover {
+        color: rgb(0, 0, 0);
+    }
+
+    #sobre iframe {
+        width: 960px;
+        height: 500px;
+    }
+
+    #cardapio img {
+        display: none;
+    }
+
+    /* Cartões*/
+    #servicos .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        margin-right: 20px;
+        background-position: center;
+        text-align: center;
+        height: 560px;
+    }
+}
+
+/* Tablet Landscape <<<<<<<<<<<<<<<<<< */
+
+/* Notebook/Pc >>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1200px) {
+
+    /* Layout */
+    .container {
+        max-width: 1140px;
+        justify-content: space-between;
+    }
+
+    /*cabeçalho*/
+    header {
+        height: 100px;
+    }
+
+    #logo img {
+        height: 100px;
+        width: 100px;
+        margin-top: 45px;
+    }
+
+    label {
+        display: none;
+    }
+
+    nav ul {
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        margin-top: 17px;
+    }
+
+    nav ul li {
+        border: 0;
+        float: left;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li a:hover {
+        color: rgb(0, 0, 0);
+    }
+
+    /* Principal */
+    main {
+        height: 77vh;
+    }
+
+    /* Destaque */
+    #destaque {
+        background-attachment: fixed;
+        height: 630px;
+
+        /*efeito paralax */
+
+    }
+
+    #destaque .container {
+        flex-direction: row;
+
+    }
+
+    #hero img {
+        width: 400px;
+        height: 580px;
+    }
+
+    .topics {
+        display: flex;
+    }
+
+    #hero-text h2 {
+        font-size: 50px;
+    }
+
+    #hero-text p {
+        font-size: 20px;
+    }
+
+    #sobre .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        padding-top: 60px;
+    }
+
+    #sobre #texto {
+        max-width: 55%;
+        font-size: 90px;
+    }
+
+    #sobre iframe {
+        max-width: 860px;
+        height: 400px;
+        margin-bottom: 20px;
+        padding-bottom: 30px;
+    }
+
+    #sobre p {
+        font-size: 25px;
+        padding-right: 50px;
+        font-family: "open sans";
+        color: var(--Preto);
+    }
+
+    #sobre h2 {
+        font-size: 50px;
+        text-align: left;
+        margin-top: -80px;
+    }
+
+    #titulo h2 {
+        text-align: left;
+        font-size: 40px;
+    }
+
+    #titulo .btn2 {
+        margin: 40px;
+        display: inline-block;
+        float: center;
+    }
+
+    #qrcode {
+        display: flex;
+        height: 400px;
+        background-color: var(--Cinza);
+    }
+
+    #code img {
+        width: 350px;
+        height: 350px;
+        margin-top: 20px;
+    }
+
+    #cardapio .container {
+        flex-direction: row;
+    }
+
+    #cardapio p {
+        font-size: 25px;
+        font-family: "open sans";
+    }
+
+    #cardapio {
+        padding: 10px 20px;
+        background: url(img/backgrounde.jpg);
+        background-size: cover;
+        background-position: left;
+        background-attachment: fixed;
+        height: 50vh;
+    }
+
+    #contato {
+        background-color: #444;
+        color: #fff;
+        padding: 60px 0;
+        font-family: "Open Sans", sans-serif;
+
+    }
+
+    #contato .contato {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 140px;
+
+    }
+
+    #contato iframe {
+        display: flex;
+    }
+
+    #contato .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 80px;
+    }
+
+    #contato .item {
+        display: flex;
+        align-items: center;
+
+    }
+
+    #contato .item img {
+        width: 40px;
+        height: 50px;
+        margin: 10px;
+    }
+
+    #contato .item p {
+        font-size: 23px;
+        padding-bottom: 10px;
+    }
+
+    #contato .hora {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        padding-left: 60px;
+        margin-bottom: 26px;
+
+    }
+
+    #contato .hora h2 {
+        font-size: 32px;
+        padding-bottom: 12px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #contato .hora p {
+        font-size: 23px;
+    }
+
+
+    footer {
+        display: block;
+        padding-bottom: 0px;
+    }
+
+    footer .container {
+        flex-direction: row;
+        padding-top: 0px;
+    }
+
+    footer #rodape {
+        padding-top: 60px;
+        margin-left: 100px;
+        font-size: 22px;
+    }
+
+    .icones img {
+        height: 48px;
+        width: 60px;
+        padding-left: 10px;
+        margin-bottom: 30px;
+    }
+
+    .container #rodape {
+        padding-bottom: 60px;
+    }
+}
+
+/* Notebook/Pc <<<<<<<<<<<<<<<<<< */
+
+/* Full HD/4K >>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1400px) {
+
+    /* Layout */
+    .container {
+        max-width: 1320px;
+    }
+
+    main h1 {
+        font-size: 6rem;
+    }
+
+    main h2 {
+        font-size: 3rem;
+    }
+}
+
+/* Full HD/4K <<<<<<<<<<<<<<<<<< */
